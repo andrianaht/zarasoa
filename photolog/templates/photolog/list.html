@@ -1,0 +1,47 @@
+{% load i18n %}
+<!-- Thumbnail stuff -->
+<link rel="stylesheet" href="/static/photolog/css/jquery.thumbnailScroller.css" type="text/css" media="screen, projection" />
+<script src="/static/photolog/js/jquery.thumbnailScroller.js"></script>
+	
+<style>
+h4, h5, h6 {
+	margin: 0;
+	font-family: Georgia,"Times New Roman",Times,serif;
+}
+h4 { font-size: 3em; color: purple; line-height: 1; }
+h5 { font-size: 1.8em; }
+</style>
+<script>
+(function($){
+window.onload=function(){
+    $("#thumbscroll").thumbnailScroller({
+        scrollerType:"hoverPrecise",
+        scrollerOrientation:"horizontal",
+        scrollSpeed:2,
+        scrollEasing:"easeOutCirc",
+        scrollEasingAmount:600,
+        acceleration:4,
+        scrollSpeed:800,
+        noScrollCenterSpace:10,
+        autoScrolling:0,
+        autoScrollingSpeed:2000,
+        autoScrollingEasing:"easeInOutQuad",
+        autoScrollingDelay:100
+    });
+}
+})(jQuery);
+</script>
+
+<div style="padding:5px; padding-bottom:10px;">
+	<h4>All galleries</h4>
+	{% if latest %}
+		{% for gallery in latest %}
+		<div class="gallery">
+			<h5><a href="/gallery/{{ gallery.title_slug }}/" style="text-decoration:none">{{ gallery.title }}</a></h5>
+			<div>
+				{{ gallery.get_thumbnails|safe }}
+			</div>
+		</div>
+		{% endfor %}
+	{% endif %}
+</div>

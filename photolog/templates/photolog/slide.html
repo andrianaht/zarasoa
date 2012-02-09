@@ -1,0 +1,27 @@
+{% load i18n %}
+{% if photos %}
+<link href="{{ STATIC_URL }}lusife_cms/css/nivo-slider.css" rel="stylesheet" type="text/css" media="screen">
+<link href="{{ STATIC_URL }}lusife_cms/css/sliderstyle.css" rel="stylesheet" type="text/css" media="screen">
+<link href="{{ STATIC_URL }}lusife_cms/css/default.css" rel="stylesheet" type="text/css" media="screen">
+<script src="{{ STATIC_URL }}lusife_cms/js/slider.js" type="text/javascript"></script>
+<div>
+	<style>
+	h4{ margin-bottom:0}
+	</style>
+	<script type="text/javascript">
+	(function($){
+		window.onload=function(){
+			$('#slider').nivoSlider();
+		}
+		})(jQuery);		    
+	</script>
+	<div class="slider-wrapper theme-default">
+		<div class="ribbon"></div>
+		<div style="position: relative; width: 635px; height: 295px;" id="slider" class="nivoSlider">
+			{% for photo in photos %}
+				{{ photo.get_picture|safe }}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endif %}

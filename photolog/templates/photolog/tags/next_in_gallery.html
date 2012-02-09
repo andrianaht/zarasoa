@@ -1,0 +1,3 @@
+{% if photo %}
+<a title="{{ photo.title }}" href="{{ photo.get_absolute_url }}"><img src="{{ photo.thumbnail.url }}"/></a>
+{% endif %}

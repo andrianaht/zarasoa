@@ -1,0 +1,47 @@
+Version Control - GitHub
+We decided to use GitHub as version control because of three main reasons:
+       - we like their distributed architecture
+       - Git makes it easy to merge our codes back together
+	   - We can work with their free plan, for free!
+So, instead of having one central place where we check in our codes, each of us clone the entire repositary. We can then either 
+commit changes to the central source or create an entirely different repository. We thought, that would be a great tool for us
+to make use of. Added to that, their free plan worked for us.
+
+Prerequesite:
+    - if you haven't installed Eclipse yet, you can download it from here: http://www.eclipse.org/downloads/
+	- we prefer aptana, but it's a matter of preference. http://www.aptana.org/products/studio3/download
+
+How we set up GitHub:
+      1. First thing is to create an account online, https://github.com/
+	  2. Install git client. Windows users can download msysgit here, http://code.google.com/p/msysgit/downloads/list
+	     Make sure you get the latest one
+	  3. Create a new Git repository for the project, https://github.com/repositories/new
+	  4. Execute the git bash, the default location is "C:\Program Files\Git\bin\sh.exe"
+	  5. Create an SSH key:
+            - Enter the following command in git bash:
+	            "ssh-keygen -t rsa -C "your_email@youremail.com"
+			- Enter a passphrase
+	  6. Add your SSH key to GitHub
+	     Go to https://github.com/account/ssh, then Click "SSH Public Keys" > Click "Add another public key"
+		 Open the id_rsa.pub file with a text editor. This is your public SSH key. Copy and paste it into the "Key" field
+		 WITHOUT ADDING ANY NEW LINES OR WHITE SPACE.
+		 You might need to show hidden files (http://windows.microsoft.com/en-US/windows-vista/Show-hidden-files) because 
+		 the ".ssh" folder is a hidden folder
+		 
+	  7. Test out the settings 
+	     run the command "$ ssh -T git@github.com"
+		 type "yes" when prompted
+		 you should get a confirmation message
+           	  
+Then you can set up your info:
+	Username and email:
+	   $ git config --global user.name "Firstname Lastname"Sets the name of the user for all git instances on the system
+       $ git config --global user.email "your_email@youremail.com"
+	  
+	API Token:
+	   Get your API token from the page https://github.com/account/admin
+	   Then run the following commands:
+	        $ git config --global github.user usernameSets the GitHub username for all git instances on the system
+	        $ git config --global github.token 0123456789yourf0123456789token
+			
+For more information, http://help.github.com

@@ -1,0 +1,90 @@
+{% load cms_tags sekizai_tags %}
+{% load static %}
+{% load cache menu_tags %}
+<!doctype html>
+<head>
+  <title>{{ request.current_page.get_title }}</title>
+  {% render_block "css" %}
+  {% render_block "js" %}
+  
+      <!-- CSS stuff -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}lusife_cms/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}lusife_cms/css/blueprint/print.css" type="text/css" media="print" />
+    <!--[if IE]><link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/lib/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+    <link rel="stylesheet" href="{{ STATIC_URL }}lusife_cms/css/style.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}lusife_cms/css/sife.css" type="text/css" media="screen, projection" />
+	
+  <script>
+  	jQuery.noConflict();
+  </script>
+</head>
+
+<body>
+  <!-- Head begins -->
+  {% render_block "js_init" %}
+    <div id="head">
+      <div class="inner-body">
+ 
+      </div>
+    </div>
+	<table cellpadding='0' cellspacing="0">
+		<tr>
+			<td rowspan="2" class="leftpan"><div class="leftpan"></div></td>
+			<td style="background-color:white">		
+				<!-- Menu/Navigation Bar -->
+				<div>
+					
+					<ul id="menu" class='top_menu'>
+					    {% show_menu 0 100 100 100 %}
+					    <li><a href='{% url blog_entry_archive_index %}'>Blog</a></li>
+					</ul>
+				</div>
+			</td>
+			<td rowspan="2" class="rightpan"><div class="rightpan"></div></td>
+		</tr>
+		<tr>
+			<td style="background-color:white">
+				<div class="inner-body content-home">
+				  <!-- Content area begins -->
+					  <div width="950px">
+							<div class="gridLeft">
+							  {% placeholder "top-left" %}
+							</div>
+							<div class="gridRight">
+								{% placeholder "top-right" %}		
+							</div>
+							<div class="clear"></div>
+							<div>
+								<div class="gridLeft" style="padding-left:5px">
+									{% placeholder "bottom-left" %}
+								</div>
+								<div class="gridRight news" style="margin-bottom:40px">
+									{% placeholder "bottom-right" %}
+								</div>
+								<div class="clear"></div>
+							</div>
+					
+					  </div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-bottom:#eee 1px solid; padding-top:20px;">
+				<!-- Footer begins -->
+				<div id="footer">
+				  <div class="inner-body">
+	
+				  </div>
+				</div>
+			</td>
+		</tr>	 
+	</table>
+    </div>
+ 
+ 
+ 
+ 
+{% cms_toolbar %}
+    
+</body>
+</html>

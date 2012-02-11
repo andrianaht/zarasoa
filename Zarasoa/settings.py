@@ -16,14 +16,25 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'feonime1_zarasoa',                      # Or path to database file if using sqlite3.
-        'USER': 'feonime1_zarasoa',                      # Not used with sqlite3.
-        'PASSWORD': 'EVV%M)a*Vrxe',                  # Not used with sqlite3.
-        'HOST': 'www.feonimerina.com',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'ramarlina_sife',                      # Or path to database file if using sqlite3.
+        'USER': 'ramarlina_sife',                      # Not used with sqlite3.
+        'PASSWORD': '5c8ae919',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': 'feonime1_zarasoa',                      # Or path to database file if using sqlite3.
+#        'USER': 'feonime1_zarasoa',                      # Not used with sqlite3.
+#        'PASSWORD': 'EVV%M)a*Vrxe',                  # Not used with sqlite3.
+#        'HOST': 'www.feonimerina.com',                      # Set to empty string for localhost. Not used with sqlite3.
+#        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+#    }
+#}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -156,6 +167,7 @@ INSTALLED_APPS = (
     'cms.plugins.snippet',
 	'sekizai',
 	#django-cms modules end here
+    'Agora',
 )
 
 #These are the custom templates for django-cms

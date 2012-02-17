@@ -28,10 +28,10 @@ DATABASES = {
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': 'feonime1_zarasoa',                      # Or path to database file if using sqlite3.
-#        'USER': 'feonime1_zarasoa',                      # Not used with sqlite3.
+#        'NAME': '',                      # Or path to database file if using sqlite3.
+#        'USER': '',                      # Not used with sqlite3.
 #        'PASSWORD': 'EVV%M)a*Vrxe',                  # Not used with sqlite3.
-#        'HOST': 'www.feonimerina.com',                      # Set to empty string for localhost. Not used with sqlite3.
+#        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
 #        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
 #    }
 #}

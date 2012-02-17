@@ -1,0 +1,23 @@
+{% extends "news/base.html" %}
+
+{% block title %} News - {{ block.super }} {%endblock%}
+
+{% block main_content %}
+	{% if news %}
+	<ul class="news">
+		{% for new in news %}
+			<li> 
+				<img src="{{ImageURL}}{{new.image}}"/>				
+				<div class="news-body"> 	
+					<h1> {{ new.title }}</h1>		
+					<span class="pub-date"> Posted {{ new.published_date}}</span> by
+					<span class="author"> {{ new.creator.username }} </span>
+					<p> {{ new.body|truncatewords:25 }} <a href="http://localhost:8000/news/{{new.pk}}" class="more"> More >> </a> </p> 	  					
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<p> No News for today... </p>
+	{% endif %}
+{%endblock%}

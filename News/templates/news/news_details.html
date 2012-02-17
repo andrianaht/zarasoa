@@ -1,0 +1,14 @@
+{% extends "news/base.html" %}
+
+{% block title %} {{new.title}} - {{block.super}}{% endblock%}
+
+{% block main_content %}
+
+<div class="news-body"> 	
+	<h1> {{ new.title }}</h1>		
+	<span class="pub-date"> Posted {{ new.published_date}}</span> by
+	<span class="author"> {{ new.creator.username }} </span>
+	<p> {{ new.body}}  </p> 	  					
+</div>
+
+{%endblock%}

@@ -1,0 +1,46 @@
+.news li{
+	list-style: none;
+	height: 100px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+	.news .news-body h1{
+		margin-top: 0px;
+		margin-bottom: 5px;
+	}
+
+	.news li img{
+		height: 100px;
+		width: 100px;
+		float: left;
+		margin-right: 5px;
+	}
+
+	.news .news-body{
+		height: 100px;
+	}
+	
+	.news .news-body p{
+		margin-top: 5px;
+		height: 70%;
+	}
+	
+	.news .pub-date, .news .author{
+		color: #ccc;
+	}
+ 
+	
+	.news .more
+	{
+		float: right;
+	}
+	
+	
+	
+
+
+
+.news-body{
+	
+}
